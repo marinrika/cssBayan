@@ -9,6 +9,11 @@
 body {
   font-family: Russo, sans-serif;
 }
+h1 {
+  margin: 0.5em auto;
+  font-size: 2.3rem;
+  font-weight: normal;
+}
 .accordion {
   display: flex;
   flex-direction: column;
@@ -16,37 +21,61 @@ body {
   margin: 1em auto;
   max-width: 50%;
 }
-.accordionTitleImage {
+.accordion-title-image {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.accordionTitleImage img {
+.accordion-title-image img {
   width: 5%;
   height: 5%;
+  opacity: 0;
 }
-.accordionImage {
+.accordion-image {
   margin: 1em auto;
   width: 0;
   height: 0;
 }
-.accordionElement {
+.accordion-element {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   cursor: pointer;
 }
-.accordionTitle {
-  font-size: 2.3rem;
+.accordion:hover .accordion-title-image img {
+  opacity: 1;
 }
-.accordionRadio {
+.accordion:hover .accordion-title {
+  color: black;
+}
+.accordion-title {
+  font-size: 2rem;
+  color: brown;
+}
+.accordion-element:hover .accordion-image {
+  width: 60%;
+  height: 60%;
+}
+.accordion-element:hover .accordion-title-image img {
+  rotate: 45deg;
+}
+.accordion-radio {
   opacity: 0;
 }
-.accordionRadio:checked ~ .accordionImage {
+.accordion-radio:checked ~ .accordion-image {
   width: 60%;
   height: 60%;
 }
 
-.accordionRadio:checked + .accordionTitle {
+.accordion-radio:checked ~ .accordion-title-image .accordion-title {
+  color: black;
+}
+.accordion-element:active {
+  opacity: 0.7;
+}
+.accordion-element:active .accordion-title-image .accordion-title {
   color: brown;
+}
+.accordion-radio:checked ~ .accordion-title-image img {
+  rotate: 45deg;
 }
