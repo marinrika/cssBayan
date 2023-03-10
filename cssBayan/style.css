@@ -1,0 +1,52 @@
+@font-face {
+  font-family: 'Russo';
+  src: url('Assets/RussoOne-Regular.ttf');
+}
+* {
+  box-sizing: border-box;
+  transition: 0.3s;
+}
+body {
+  font-family: Russo, sans-serif;
+}
+.accordion {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  margin: 1em auto;
+  max-width: 50%;
+}
+.accordionTitleImage {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.accordionTitleImage img {
+  width: 5%;
+  height: 5%;
+}
+.accordionImage {
+  margin: 1em auto;
+  width: 0;
+  height: 0;
+}
+.accordionElement {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.accordionTitle {
+  font-size: 2.3rem;
+}
+.accordionRadio {
+  opacity: 0;
+}
+.accordionRadio:checked ~ .accordionImage {
+  width: 60%;
+  height: 60%;
+}
+
+.accordionRadio:checked + .accordionTitle {
+  color: brown;
+}
