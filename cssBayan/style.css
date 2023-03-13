@@ -1,0 +1,130 @@
+@font-face {
+  font-family: 'Russo';
+  src: url('Assets/RussoOne-Regular.ttf');
+}
+* {
+  box-sizing: border-box;
+  transition: 0.3s;
+}
+body {
+  font-family: Russo, sans-serif;
+  background-color: rgb(227, 218, 204);
+}
+h1 {
+  font-size: 1em;
+  font-weight: normal;
+}
+.accordion {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  margin: 1em auto;
+  max-width: 90%;
+}
+.accordion-title-image {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.accordion-title-image img {
+  width: 5%;
+  height: 5%;
+}
+.accordion-image {
+  margin: 0.5em auto;
+  width: 0;
+  height: 0;
+}
+.accordion-element {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  border-bottom: solid 0.08rem #b3b3b3;
+}
+.accordion-title {
+  font-size: 0.8em;
+  color: brown;
+}
+.accordion-radio {
+  opacity: 0;
+}
+.accordion-radio:checked ~ .accordion-image {
+  width: 80%;
+  height: 80%;
+}
+
+.accordion-radio:checked ~ .accordion-title-image .accordion-title {
+  color: black;
+}
+.accordion-element:active {
+  opacity: 0.7;
+}
+.accordion-element:active .accordion-title-image .accordion-title {
+  color: brown;
+}
+.accordion-radio:checked ~ .accordion-title-image img {
+  rotate: 45deg;
+}
+
+@media (min-width: 400px) and (max-width: 1200px) {
+  .accordion-radio:checked ~ .accordion-image {
+    width: 70%;
+    height: 70%;
+  }
+}
+
+@media (min-width: 800.1px) and (max-width: 1200px) {
+  h1 {
+    font-size: 2em;
+  }
+  .accordion {
+    margin: 1em auto;
+    max-width: 80%;
+  }
+  .accordion-image {
+    margin: 0.8em auto;
+  }
+  .accordion-title {
+    font-size: 1.8em;
+    color: brown;
+  }
+}
+
+@media (min-width: 1200.1px) {
+  .accordion-radio:checked ~ .accordion-image {
+    width: 60%;
+    height: 60%;
+  }
+  h1 {
+    font-size: 2.3rem;
+  }
+  .accordion {
+    max-width: 60%;
+  }
+  .accordion-title {
+    font-size: 2rem;
+  }
+  .accordion-title-image img {
+    opacity: 0;
+  }
+  .accordion-image {
+    margin: 1em auto;
+  }
+}
+
+@media (hover: hover) {
+  .accordion:hover .accordion-title-image img {
+    opacity: 1;
+  }
+  .accordion:hover .accordion-title {
+    color: black;
+  }
+  .accordion-element:hover .accordion-image {
+    width: 60%;
+    height: 60%;
+  }
+  .accordion-element:hover .accordion-title-image img {
+    rotate: 45deg;
+  }
+}
