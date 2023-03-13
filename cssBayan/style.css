@@ -111,6 +111,9 @@ h1 {
   .accordion-image {
     margin: 1em auto;
   }
+}
+
+@media (hover: hover) {
   .accordion:hover .accordion-title-image img {
     opacity: 1;
   }
